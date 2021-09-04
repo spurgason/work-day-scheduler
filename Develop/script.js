@@ -43,40 +43,63 @@ const hour4 = document.getElementById('hour-4').value = 16
 const hour5 = document.getElementById('hour-5').value = 17
 
 // Stored values for time slots
-let hourBlocks = [
-    hour8,
-    hour9,
-    hour10,
-    hour11,
-    hour12,
-    hour1,
-    hour2,
-    hour3,
-    hour4,
-    hour5]
+// let hourBlocks = [
+//     hour8,
+//     hour9,
+//     hour10,
+//     hour11,
+//     hour12,
+//     hour1,
+//     hour2,
+//     hour3,
+//     hour4,
+//     hour5]
 
 // Runs function to check if it is past, present, or future
 function pastToFuture() {
 
+
+    $('.time-block').each( function(){
+        var hourBlocks = parseInt($(this).attr("id").split("hour")[1]);
+
+        if (hourBlocks < currentHour) {
+            $(this).addClass('past')
+            $(this).removeClass('present')
+            $(this).removeClass('future')
+        } else if (hourBlocks === currentHour) {
+            $(this).removeClass('past')
+            $(this).addClass('present')
+            $(this).removeClass('future')
+        } else {
+            $(this).removeClass('past')
+            $(this).removeClass('present')
+            $(this).addClass('future')
+        }
+
+
+    })
+
+    // WHY DOES THIS FOR LOOP NOT WORK?
     // For loop to check each time in array
-    hourBlocks.forEach(function (checkTime) {
+    // for (let index = 0; index < hourBlocks.length; index++) {
 
         // Sets the background color class for past, present, or future
-        if (hourBlocks < currentHour) {
-            $('.description').addClass('past')
-            $('.description').removeClass('present')
-            $('.description').removeClass('future')
-        } else if (hourBlocks == currentHour) {
-            $('.description').removeClass('past')
-            $('.description').addClass('present')
-            $('.description').removeClass('future')
-        } else {
-            $('.description').removeClass('past')
-            $('.description').removeClass('present')
-            $('.description').addClass('future')
-        }
-        console.log(checkTime);
-    })
+        // if (hourBlocks < currentHour) {
+        //     $('.description').addClass('past')
+        //     $('.description').removeClass('present')
+        //     $('.description').removeClass('future')
+        // } else if (hourBlocks === currentHour) {
+        //     $('.description').removeClass('past')
+        //     $('.description').addClass('present')
+        //     $('.description').removeClass('future')
+        // } else {
+        //     $('.description').removeClass('past')
+        //     $('.description').removeClass('present')
+        //     $('.description').addClass('future')
+        // }
+        
+    // }
+    
 
 } pastToFuture();
 

@@ -3,4 +3,4 @@ This challenge required me to create a scheduler for hours of the work day. Depe
 
 # <a href="https://spurgason.github.io/work-day-scheduler/">Deployed Application</a>
 
-<img src="Develop/work-day.png">
+<img src="Assets/Images/work-day.png">

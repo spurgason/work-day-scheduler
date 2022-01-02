@@ -9,7 +9,7 @@ This applications purpose is to help individuals working a 9-5 job keep track of
 `jQuery`<br>
 
 ## Install
-To install this application simply clone this repository, open it in your code editor and open the `index.html` in your browser.
+To install this application simply clone this repository, open it in your code editor and open the [`index.html`](index.html) in your browser.
 
 ## Usage 
 This application allows users to save tasks to an hourly time slot. Depending on the hour the time slot's color will change indicating that the task is currently due, upcoming in the near future, or it has already passed.  
